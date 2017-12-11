@@ -59,12 +59,12 @@ gulp.task('jshint', function () {
         .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('jscs', function () {
-    return gulp.src('src/{app,components}/**/*.js')
-        .pipe($.jscs('./.jscsrc'));
-});
+//gulp.task('jscs', function () {
+//    return gulp.src('src/app/**/*.js')
+//        .pipe($.jscs('./.jscsrc'));
+//});
 
-gulp.task('analyze', ['jshint', 'jscs']);
+gulp.task('analyze', ['jshint']);
 
 gulp.task('injector:js', ['analyze', 'injector:css'], function () {
     return gulp.src('src/index.html')
